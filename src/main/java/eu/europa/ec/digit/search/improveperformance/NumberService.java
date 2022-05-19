@@ -41,7 +41,22 @@ public class NumberService {
 
     public Integer findSmallestDuplicateImproved(List<Integer> data) {
         
-        throw new UnsupportedOperationException("Not implemented.");
+        if (data.size() < 2) {
+			return null;
+		}
+		
+		int[] numbers = new int[SAMPLE_SIZE];
+		
+		for(int number:data) {
+			numbers[number]++;
+		}
+		
+		for(int i=0;i<numbers.length;i++) {
+			if(numbers[i]>1){
+				return i;
+			}
+		}
+		return null;
 
     }
 
